@@ -42,7 +42,7 @@ fi
 
 tabsep $SNPS
 grep -v rs $SNPS > $SNPS.indel
-sed -E 's/:/\t/g' $SNPS.indel | cut -f1-2 > $SNPS.indel.short
+sed -E 's/:/\t/g' $SNPS.indel > $SNPS.indel.short
 cut -f3- $SNPS.indel.short > $SNPS.indel.short.2
 rm $SNPS.indel.short
 
