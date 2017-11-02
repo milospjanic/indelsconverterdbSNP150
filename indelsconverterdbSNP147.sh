@@ -61,5 +61,7 @@ awk 'NR==FNR {h1[$1] = $1; h2[$3]=$3; h3[$1$3]=$4; next} {if(h2[$2]==$2 && h1[$1
 
 cat $1.rsID.nohead.insertions $1.rsID.nohead.snp.plus.simple.deletions $1.rsID.nohead.large.deletions > $1.rsID
 awk -F "\t" '{print $2,$3,$1,$5,$6}' OFS="\t" $1.rsID > $1.rsID.re
-mv $1.rsID.re $1.rsID
+sort $1.rsID.re | uniq > $1.rsID.re2
+mv $1.rsID.re2 $1.rsID
+rm $1.rsID.re
  
