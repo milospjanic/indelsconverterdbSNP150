@@ -60,9 +60,6 @@ awk 'NR==FNR {h1[$1] = $1; h2[$3]=$3; h3[$1$3]=$4; h4[$1$3]=1; next} {if(h2[$2]=
 
 cat $1.rsID.nohead.insertions $1.rsID.nohead.snp.plus.simple.deletions $1.rsID.nohead.large.deletions > $1.rsID
 
-#sed -i '1s/^/rsID\t/' $1.head
-#cat $1.head $1.rsID > $1.rsID.final
-
 
 rm $1.mod
 rm $1.mod2
