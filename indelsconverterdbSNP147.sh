@@ -50,7 +50,7 @@ rm $SNPS.indel.short
 #find positions of snps from the input list by comparing to snpdb
 
 awk 'NR==FNR {h1[$1] = $1; h2[$2]=$2; h3[$1$2]=$4; next} {if(h2[$2]==$2 && h1[$1]==$1 ) print h3[$1$2]"\t"$0}' snp150Common.bed.insertions $SNPS.indel.short.2 > $1.rsID.nohead.insertions
-awk 'NR==FNR {h1[$1] = $1; h2[$2]=$2; h3[$1$2]=$4; next} {if(h2[$2]==$2 && h1[$1]==$1 ) print h3[$1$2]"\t"$0}' snp150Common.bed.snp.plus.simple.deletions $SNPS.indelshort.2 > $1.rsID.nohead.snp.plus.simple.deletions
+awk 'NR==FNR {h1[$1] = $1; h2[$2]=$2; h3[$1$2]=$4; next} {if(h2[$2]==$2 && h1[$1]==$1 ) print h3[$1$2]"\t"$0}' snp150Common.bed.snp.plus.simple.deletions $SNPS.indel.short.2 > $1.rsID.nohead.snp.plus.simple.deletions
 awk 'NR==FNR {h1[$1] = $1; h2[$2]=$2; h3[$1$2]=$4; next} {if(h2[$2]==$2 && h1[$1]==$1 ) print h3[$1$2]"\t"$0}' snp150Common.bed.large.deletions $SNPS.indel.short.2 > $1.rsID.nohead.large.deletions
 
 awk 'NR==FNR {h1[$1] = $1; h2[$3]=$3; h3[$1$3]=$4; next} {if(h2[$2]==$2 && h1[$1]==$1 ) print h3[$1$2]"\t"$0}' snp150Common.bed.insertions $SNPS.indel.short.2 >> $1.rsID.nohead.insertions
