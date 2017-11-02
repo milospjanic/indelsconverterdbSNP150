@@ -42,9 +42,9 @@ fi
 
 tabsep $SNPS
 grep -v rs $SNPS > $SNPS.indel
-sed -E 's/:/\t/g' $SNPS.indel.col3 | cut -f1-2 > $SNPS.indel.col3.short
-cut -f3- $SNPS.indel.col3.short > $SNPS.indel.col3.short.2
-rm $SNPS.indel.col3.short
+sed -E 's/:/\t/g' $SNPS.indel | cut -f1-2 > $SNPS.indel.short
+cut -f3- $SNPS.indel.short > $SNPS.indel.short.2
+rm $SNPS.indel.short
 
 
 #find positions of snps from the input list by comparing to snpdb
